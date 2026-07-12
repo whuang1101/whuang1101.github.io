@@ -18,5 +18,4 @@ All six built-in RiseKeeper alarm sounds are original procedural audio generated
 
 The generated assets are 18-second, mono, 16-bit Linear PCM CAF files at 22.05 kHz.
 
-Questions can be sent to [snoozeproof.help@outlook.com](mailto:snoozeproof.help@outlook.com).
-
+Questions can be sent to [risekeeper.help@outlook.com](mailto:risekeeper.help@outlook.com).

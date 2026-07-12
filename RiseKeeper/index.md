@@ -33,9 +33,8 @@ Open **Settings → App Icon** and choose Classic, Aurora, Obsidian, or Hyper. C
 
 ## Contact
 
-Email [snoozeproof.help@outlook.com](mailto:snoozeproof.help@outlook.com) for support. Include your iPhone model, iOS version, and a short description of what happened. Do not send passwords, verification codes, or other sensitive information.
+Email [risekeeper.help@outlook.com](mailto:risekeeper.help@outlook.com) for support. Include your iPhone model, iOS version, and a short description of what happened. Do not send passwords, verification codes, or other sensitive information.
 
 - [Privacy policy](/RiseKeeper/privacy/)
 - [Terms of use](/RiseKeeper/terms/)
 - [Sound licenses](/RiseKeeper/sound-licenses/)
-

@@ -13,5 +13,4 @@ RiseKeeper Pro is a lifetime, non-consumable in-app purchase processed by Apple.
 
 To the maximum extent permitted by law, RiseKeeper is provided without warranties of uninterrupted or error-free operation. These terms do not limit consumer rights that cannot legally be waived.
 
-Questions can be sent to [snoozeproof.help@outlook.com](mailto:snoozeproof.help@outlook.com).
-
+Questions can be sent to [risekeeper.help@outlook.com](mailto:risekeeper.help@outlook.com).

@@ -35,5 +35,4 @@ Material policy changes will be reflected in this document and the effective dat
 
 ## Contact
 
-Questions can be sent to [snoozeproof.help@outlook.com](mailto:snoozeproof.help@outlook.com).
-
+Questions can be sent to [risekeeper.help@outlook.com](mailto:risekeeper.help@outlook.com).

@@ -7,5 +7,4 @@ permalink: /
 
 Independent apps by Wilson Huang.
 
-- [SnoozeProof support](/SnoozeProof/)
-
+- [RiseKeeper support](/RiseKeeper/)

@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b0e14">
     <meta name="color-scheme" content="dark">
+    <script>document.documentElement.classList.add('js');</script>
 
     <title>{% if page.title %}{{ page.title }} · {% endif %}RiseKeeper</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
-    <link rel="icon" href="/RiseKeeper/assets/site/app-icon.png" sizes="any">
-    <link rel="apple-touch-icon" href="/RiseKeeper/assets/site/app-icon.png">
+    <link rel="icon" href="/RiseKeeper/assets/site/app-icon-192.png" sizes="any">
+    <link rel="apple-touch-icon" href="/RiseKeeper/assets/site/app-icon-512.png">
     <link rel="stylesheet" href="/RiseKeeper/assets/site/site.css">
 
     <meta property="og:type" content="website">
@@ -18,11 +19,14 @@
     <meta property="og:title" content="{{ page.title | default: 'RiseKeeper' | escape }}">
     <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:image" content="https://whuang1101.github.io/RiseKeeper/assets/site/app-icon.png">
+    <meta property="og:image" content="https://whuang1101.github.io/RiseKeeper/assets/site/app-icon-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="RiseKeeper app icon">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ page.title | default: 'RiseKeeper' | escape }}">
     <meta name="twitter:description" content="{{ page.description | default: site.description | escape }}">
-    <meta name="twitter:image" content="https://whuang1101.github.io/RiseKeeper/assets/site/app-icon.png">
+    <meta name="twitter:image" content="https://whuang1101.github.io/RiseKeeper/assets/site/app-icon-512.png">
 
     {% if page.page_class == "marketing" %}
     <script type="application/ld+json">
@@ -34,7 +38,7 @@
         "operatingSystem": "iOS 26 or later",
         "description": "Real iOS system alarms paired with wake-up missions, snooze protection, and private on-device wake history.",
         "url": "https://whuang1101.github.io/RiseKeeper/",
-        "image": "https://whuang1101.github.io/RiseKeeper/assets/site/app-icon.png",
+        "image": "https://whuang1101.github.io/RiseKeeper/assets/site/app-icon-512.png",
         "author": {
           "@type": "Organization",
           "name": "Huang Labs"
@@ -47,6 +51,62 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does RiseKeeper need to stay open for an alarm to ring?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. RiseKeeper schedules through Apple AlarmKit, so the app does not need to remain open. Your iPhone still needs power, alarm permission, and compatible iOS settings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will my custom sound still ring after I close the app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Compatible custom audio is converted and stored locally where the scheduled system alarm can use it. Recording inside RiseKeeper and Music Library selection require Pro; importing compatible Files or Voice Memos audio is free."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the iOS Stop button bypass a mission?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "iOS always provides a system-controlled Stop affordance. RiseKeeper does not claim otherwise. Strict Mode can detect a bypass and re-alert, while protected snooze and Wake-Up Check add more follow-through."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I try premium missions before purchasing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Typing, Memory, and Odd One Out can all be played in preview mode before you unlock Pro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is RiseKeeper Pro a subscription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. RiseKeeper Pro is a one-time, non-consumable purchase for lifetime access. Restore Purchases is available in Settings → RiseKeeper Pro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "My alarms do not appear. What should I check?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open iOS Settings and make sure alarm access is enabled for RiseKeeper. Then open RiseKeeper once so it can reconcile saved alarms with AlarmKit. If the issue continues, email risekeeper.help@outlook.com."
+            }
+          }
+        ]
+      }
+    </script>
     {% endif %}
   </head>
   <body class="{{ page.page_class | default: 'legal-page' }}">
@@ -55,16 +115,25 @@
     <header class="site-header">
       <nav class="site-nav shell" aria-label="Main navigation">
         <a class="brand" href="/RiseKeeper/" aria-label="RiseKeeper home">
-          <img src="/RiseKeeper/assets/site/app-icon.png" alt="" width="42" height="42">
+          <img src="/RiseKeeper/assets/site/app-icon-192.png" alt="" width="42" height="42">
           <span>RiseKeeper</span>
         </a>
-        <div class="nav-links">
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">
+          <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="nav-toggle-label">Menu</span>
+        </button>
+
+        <div class="nav-links" id="site-menu">
           <a href="/RiseKeeper/#how-it-works">How it works</a>
           <a href="/RiseKeeper/#missions">Missions</a>
+          <a href="/RiseKeeper/#preview">Preview</a>
           <a href="/RiseKeeper/#pro">Pro</a>
           <a href="/RiseKeeper/#support">Support</a>
+          <a class="nav-cta nav-cta-inline" href="mailto:risekeeper.help@outlook.com?subject=Tell%20me%20when%20RiseKeeper%20launches">Notify me at launch</a>
         </div>
-        <a class="nav-cta" href="/RiseKeeper/#preview">Watch preview</a>
+
+        <a class="nav-cta nav-cta-bar" href="mailto:risekeeper.help@outlook.com?subject=Tell%20me%20when%20RiseKeeper%20launches">Notify me</a>
       </nav>
     </header>
 
@@ -83,12 +152,13 @@
       <div class="footer-inner shell">
         <div class="footer-brand">
           <a class="brand" href="/RiseKeeper/">
-            <img src="/RiseKeeper/assets/site/app-icon.png" alt="" width="38" height="38">
+            <img src="/RiseKeeper/assets/site/app-icon-192.png" alt="" width="38" height="38">
             <span>RiseKeeper</span>
           </a>
           <p>The alarm that gets you up.</p>
+          <p class="footer-req">iPhone · iOS 26 or later</p>
         </div>
-        <div class="footer-links" aria-label="Footer navigation">
+        <nav class="footer-links" aria-label="Footer navigation">
           <div>
             <strong>Product</strong>
             <a href="/RiseKeeper/#features">Features</a>
@@ -107,12 +177,50 @@
             <a href="/RiseKeeper/terms/">Terms</a>
             <a href="/RiseKeeper/sound-licenses/">Sound licenses</a>
           </div>
-        </div>
+        </nav>
       </div>
       <div class="footer-bottom shell">
         <span>© 2026 Huang Labs</span>
         <span>Made for mornings on iPhone.</span>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var toggle = document.querySelector('.nav-toggle');
+        var menu = document.getElementById('site-menu');
+        if (!toggle || !menu) return;
+
+        function setOpen(open) {
+          toggle.setAttribute('aria-expanded', String(open));
+          document.body.classList.toggle('nav-open', open);
+        }
+
+        toggle.addEventListener('click', function () {
+          setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+        });
+
+        menu.addEventListener('click', function (event) {
+          if (event.target.closest('a')) setOpen(false);
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+            setOpen(false);
+            toggle.focus();
+          }
+        });
+
+        document.addEventListener('click', function (event) {
+          if (!event.target.closest('.site-nav') && toggle.getAttribute('aria-expanded') === 'true') {
+            setOpen(false);
+          }
+        });
+
+        window.matchMedia('(min-width: 981px)').addEventListener('change', function (event) {
+          if (event.matches) setOpen(false);
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -77,6 +77,137 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* The JavaScript-enhanced marketing page is one continuous sky rather than
+   eleven painted section backgrounds. Scroll position updates these colors
+   and moves the sun; the original zone gradients remain the no-JS and reduced
+   motion fallback. */
+body.marketing {
+  --sky-top: rgb(5, 7, 13);
+  --sky-mid: rgb(7, 11, 22);
+  --sky-bottom: rgb(10, 16, 32);
+  --sun-rgb: 255, 142, 62;
+  --sun-x: -10vw;
+  --sun-y: 112vh;
+  --sun-scale: 0.72;
+  --sun-opacity: 0;
+  --horizon-y: 88vh;
+  --horizon-opacity: 0.18;
+}
+
+.daybreak-sky {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+  contain: layout paint style;
+  background: linear-gradient(
+    180deg,
+    var(--sky-top) 0%,
+    var(--sky-mid) 54%,
+    var(--sky-bottom) 100%
+  );
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+html.js body.marketing .daybreak-sky {
+  display: block;
+}
+
+/* The glow follows the same coordinates as the sun but stays soft enough to
+   preserve foreground contrast. */
+.daybreak-sky::before {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      52vw 48vw at var(--sun-x) var(--sun-y),
+      rgba(var(--sun-rgb), 0.24),
+      rgba(var(--sun-rgb), 0.08) 34%,
+      transparent 70%
+    ),
+    radial-gradient(
+      90% 42% at 50% var(--horizon-y),
+      rgba(255, 218, 166, 0.08),
+      transparent 72%
+    );
+  content: "";
+}
+
+.daybreak-sun {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(70px, 7.4vw, 124px);
+  aspect-ratio: 1;
+  opacity: var(--sun-opacity);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 38% 34%,
+    #fffbed 0 7%,
+    #ffe7ad 27%,
+    #ffc36e 66%,
+    rgb(var(--sun-rgb)) 100%
+  );
+  box-shadow:
+    0 0 24px rgba(var(--sun-rgb), 0.72),
+    0 0 80px rgba(var(--sun-rgb), 0.34),
+    0 0 170px rgba(var(--sun-rgb), 0.17);
+  transform:
+    translate3d(var(--sun-x), var(--sun-y), 0)
+    translate(-50%, -50%)
+    scale(var(--sun-scale));
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.daybreak-sun::after {
+  position: absolute;
+  inset: 10%;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: inherit;
+  content: "";
+}
+
+.daybreak-horizon {
+  position: absolute;
+  top: 0;
+  right: -8vw;
+  left: -8vw;
+  height: 1px;
+  opacity: var(--horizon-opacity);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 207, 147, 0.38) 18%,
+    rgba(255, 231, 190, 0.76) 50%,
+    rgba(255, 207, 147, 0.38) 82%,
+    transparent
+  );
+  box-shadow: 0 0 32px rgba(255, 188, 112, 0.16);
+  transform: translate3d(0, var(--horizon-y), 0);
+  will-change: transform;
+}
+
+/* Once the dynamic field is available, sections reveal it instead of painting
+   independent color bands. Content, rules, and section-specific text tokens
+   remain unchanged. */
+html.js body.marketing main,
+html.js body.marketing .site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+html.js body.marketing .zone,
+html.js body.marketing .site-footer {
+  background: transparent;
+}
+
+html.js body.marketing .zone::before {
+  display: none;
+}
+
 img,
 video,
 svg {
@@ -2942,6 +3073,36 @@ html:not(.js) .legal-main {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  html.js body.marketing .daybreak-sky {
+    display: none;
+  }
+
+  html.js body.marketing .zone {
+    background: linear-gradient(180deg, var(--sky-a), var(--sky-b));
+  }
+
+  html.js body.marketing .zone.z-closing {
+    background: linear-gradient(
+      180deg,
+      #59698a 0%,
+      #6d788f 6%,
+      #8e8987 13%,
+      #b8a292 21%,
+      #dbc4a4 29%,
+      #f0e0c4 37%,
+      var(--cream) 45%,
+      var(--cream) 100%
+    );
+  }
+
+  html.js body.marketing .zone::before {
+    display: block;
+  }
+
+  html.js body.marketing .site-footer {
+    background: var(--parchment);
   }
 
   *,

@@ -21,186 +21,301 @@ page_class: marketing
   </defs>
 </svg>
 
-<main id="main-content">
-  <section class="hero shell" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <p class="eyebrow">Native iOS 26 alarm · No account required</p>
-      <h1 id="hero-title">The alarm that gets you <em>all the way up.</em></h1>
-      <p class="hero-lede">
-        RiseKeeper pairs real iOS system alarms with wake-up missions, protected snoozes,
-        and a record of the mornings you followed through.
-      </p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="mailto:risekeeper.help@outlook.com?subject=Tell%20me%20when%20RiseKeeper%20launches&amp;body=Send%20me%20a%20note%20when%20RiseKeeper%20is%20on%20the%20App%20Store.">Notify me at launch</a>
-        <a class="button button-secondary" href="#preview">Watch the 22-second preview</a>
-      </div>
-      <p class="launch-note">
-        <span class="status-dot" aria-hidden="true"></span>
-        App Store review in progress · iPhone, iOS 26 or later
-      </p>
-    </div>
-
-    <div class="hero-visual" role="img" aria-label="RiseKeeper alarm list beside a Memory wake-up mission">
-      <div class="phone phone-main">
-        <img src="/RiseKeeper/assets/showcase/6.5/list.jpg" width="642" height="1389" fetchpriority="high" alt="">
-      </div>
-      <div class="phone phone-secondary">
-        <img src="/RiseKeeper/assets/showcase/6.5/memory.jpg" width="642" height="1389" alt="">
-      </div>
-      <div class="mission-float" aria-hidden="true">
-        <strong>Memory sequence</strong>
-        <div class="tile-row"><i></i><i></i><i></i><i></i></div>
-        <span>Tap the pattern. Prove you’re awake.</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="proof-strip shell" role="group" aria-label="RiseKeeper highlights">
-    <div class="proof-item">
-      <strong>Real system alarms</strong>
-      <span>Scheduled through Apple AlarmKit</span>
-    </div>
-    <div class="proof-item">
-      <strong>Five wake-up missions</strong>
-      <span>Every challenge can be previewed</span>
-    </div>
-    <div class="proof-item">
-      <strong>Private by design</strong>
-      <span>No account, ads, analytics, or tracking</span>
-    </div>
+<div class="time-rail" aria-hidden="true" data-time-rail>
+  <div class="rail-line"></div>
+  <div class="rail-ticks"></div>
+  <ul class="rail-marks">
+    <li data-mark="0" style="--p:0"><span>04:47</span></li>
+    <li data-mark="1" style="--p:0.2"><span>05:30</span></li>
+    <li data-mark="2" style="--p:0.4"><span>06:10</span></li>
+    <li data-mark="3" style="--p:0.6"><span>06:30</span></li>
+    <li data-mark="4" style="--p:0.8"><span>07:05</span></li>
+    <li data-mark="5" style="--p:1"><span>07:20</span></li>
+  </ul>
+  <div class="rail-head">
+    <span class="rail-now-time">04:47</span>
+    <small>Daybreak</small>
   </div>
+  <div class="rail-now"></div>
+</div>
 
-  <section id="how-it-works" class="section shell" aria-labelledby="how-title">
-    <div class="section-header">
-      <p class="section-kicker">A better wake-up loop</p>
-      <h2 id="how-title">Hearing the alarm was never the whole problem.</h2>
-      <p>RiseKeeper is built for the hazy minute after it rings—the moment when “five more minutes” usually wins.</p>
-    </div>
-    <div class="how-grid">
-      <article class="step-card">
-        <span class="step-number">01</span>
-        <h3>Set a real iOS alarm</h3>
-        <p>Choose a one-time or weekly schedule, sound, snooze policy, and mission. Tap Save and the alarm turns on.</p>
-      </article>
-      <article class="step-card">
-        <span class="step-number">02</span>
-        <h3>Make your brain show up</h3>
-        <p>When the alarm rings, complete a Math, Number Order, Typing, Memory, or Odd One Out challenge.</p>
-      </article>
-      <article class="step-card">
-        <span class="step-number">03</span>
-        <h3>Build proof, not promises</h3>
-        <p>Review wake history, snoozes, and streaks stored privately on your iPhone—ready for tomorrow morning.</p>
-      </article>
+<main id="main-content">
+  <section class="zone z-hero" aria-labelledby="hero-title" data-zone="0">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="stamp">Native iOS 26 alarm · No account required</p>
+        <h1 id="hero-title">The alarm that gets you <em>all the way up.</em></h1>
+        <p class="lede hero-lede">
+          RiseKeeper pairs real iOS system alarms with wake-up missions, protected snoozes,
+          and a record of the mornings you followed through.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:risekeeper.help@outlook.com?subject=Tell%20me%20when%20RiseKeeper%20launches&amp;body=Send%20me%20a%20note%20when%20RiseKeeper%20is%20on%20the%20App%20Store.">Notify me at launch</a>
+          <a class="button button-secondary" href="#preview">Watch the preview</a>
+        </div>
+        <p class="launch-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="launch-state">App Store review in progress</span>
+          <span class="launch-req">iPhone · iOS 26 or later</span>
+        </p>
+      </div>
+
+      <div class="hero-visual" role="img" aria-label="The RiseKeeper alarm list beside a Memory wake-up mission on iPhone">
+        <div class="hero-stack">
+          <figure class="device device-main">
+            <div class="device-frame">
+              <img src="/RiseKeeper/assets/showcase/6.5/list.jpg"
+                   srcset="/RiseKeeper/assets/showcase/6.5/list.jpg 642w, /RiseKeeper/assets/showcase/6.9/list.jpg 660w"
+                   sizes="(max-width: 760px) 50vw, 286px"
+                   width="642" height="1389" fetchpriority="high" alt="">
+              <span class="device-island" aria-hidden="true"></span>
+            </div>
+          </figure>
+          <figure class="device device-back">
+            <div class="device-frame">
+              <img src="/RiseKeeper/assets/showcase/6.5/memory.jpg"
+                   srcset="/RiseKeeper/assets/showcase/6.5/memory.jpg 642w, /RiseKeeper/assets/showcase/6.9/memory.jpg 660w"
+                   sizes="(max-width: 760px) 36vw, 216px"
+                   width="642" height="1389" loading="lazy" alt="">
+              <span class="device-island" aria-hidden="true"></span>
+            </div>
+          </figure>
+        </div>
+        <div class="hero-chip" aria-hidden="true">
+          <b>Mission · Memory</b>
+          <div class="tile-row"><i></i><i></i><i></i><i></i></div>
+          <span>Tap the pattern. Prove you’re awake.</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="features" class="section feature-band" aria-labelledby="alarm-title">
-    <div class="feature-layout shell">
-      <div class="feature-copy">
-        <p class="section-kicker">Alarm-first engineering</p>
+  <section class="zone z-strip" aria-label="RiseKeeper highlights" data-zone="1">
+    <div class="shell">
+      <div class="proof-strip" role="group" aria-label="RiseKeeper highlights">
+        <div class="proof-item" data-reveal>
+          <span class="spec-index" aria-hidden="true">01 / ALARMKIT</span>
+          <strong>Real system alarms</strong>
+          <span>Scheduled through Apple AlarmKit</span>
+        </div>
+        <div class="proof-item" data-reveal>
+          <span class="spec-index" aria-hidden="true">02 / MISSIONS</span>
+          <strong>Five wake-up missions</strong>
+          <span>Every challenge can be previewed</span>
+        </div>
+        <div class="proof-item" data-reveal>
+          <span class="spec-index" aria-hidden="true">03 / PRIVACY</span>
+          <strong>Private by design</strong>
+          <span>No account, ads, analytics, or tracking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="zone z-how" aria-labelledby="how-title" data-zone="2">
+    <div class="shell">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="stamp">A better wake-up loop</p>
+          <h2 id="how-title">Hearing the alarm was never the whole problem.</h2>
+        </div>
+        <p class="lede">RiseKeeper is built for the hazy minute after it rings — the moment when “five more minutes” usually wins.</p>
+      </div>
+
+      <div class="ladder">
+        <article class="ladder-row" data-reveal>
+          <span class="ladder-num" aria-hidden="true">01</span>
+          <div>
+            <span class="ladder-time">The night before</span>
+            <h3>Set a real iOS alarm</h3>
+          </div>
+          <p>Choose a one-time or weekly schedule, sound, snooze policy, and mission. Tap Save and the alarm turns on.</p>
+        </article>
+        <article class="ladder-row" data-reveal>
+          <span class="ladder-num" aria-hidden="true">02</span>
+          <div>
+            <span class="ladder-time">The moment it rings</span>
+            <h3>Make your brain show up</h3>
+          </div>
+          <p>Complete a Math, Number Order, Typing, Memory, or Odd One Out challenge before the alarm stays quiet.</p>
+        </article>
+        <article class="ladder-row" data-reveal>
+          <span class="ladder-num" aria-hidden="true">03</span>
+          <div>
+            <span class="ladder-time">Every morning after</span>
+            <h3>Build proof, not promises</h3>
+          </div>
+          <p>Review wake history, snoozes, and streaks stored privately on your iPhone — ready for tomorrow morning.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="zone z-alarm" aria-labelledby="alarm-title" data-zone="3">
+    <div class="shell split">
+      <div class="split-visual" data-reveal>
+        <figure class="device" style="--dw: clamp(230px, 24vw, 306px)">
+          <div class="device-frame">
+            <img src="/RiseKeeper/assets/showcase/6.5/editor.jpg"
+                 srcset="/RiseKeeper/assets/showcase/6.5/editor.jpg 642w, /RiseKeeper/assets/showcase/6.9/editor.jpg 660w"
+                 sizes="(max-width: 760px) 62vw, 306px"
+                 width="642" height="1389" loading="lazy"
+                 alt="The RiseKeeper alarm editor showing schedule, sound, snooze, and mission settings">
+            <span class="device-island" aria-hidden="true"></span>
+          </div>
+          <div class="stop-choice" aria-hidden="true">
+            <small>Alarm stopped</small>
+            <div class="choice-buttons">
+              <span>Snooze</span>
+              <span>Do Mission</span>
+            </div>
+          </div>
+        </figure>
+      </div>
+
+      <div class="split-copy" data-reveal>
+        <p class="stamp">Alarm-first engineering</p>
         <h2 id="alarm-title">It rings when the app isn’t open.</h2>
-        <p>
+        <p class="lede">
           RiseKeeper schedules alarms with Apple’s AlarmKit. iOS owns the ring, while RiseKeeper owns
           the mission, snooze protection, and the path back to awake.
         </p>
         <div class="feature-list">
           <div class="feature-line">
-            <span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-volume"></use></svg></span>
-            <div>
-              <strong>Custom sounds survive app closure</strong>
-              <span>Once scheduled, compatible imported or recorded audio stays available to the system alarm.</span>
-            </div>
+            <svg class="icon" aria-hidden="true"><use href="#i-volume"></use></svg>
+            <strong>Custom sounds survive app closure</strong>
+            <span>Once scheduled, compatible imported or recorded audio stays available to the system alarm.</span>
           </div>
           <div class="feature-line">
-            <span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-split"></use></svg></span>
-            <div>
-              <strong>Stop becomes a clear choice</strong>
-              <span>When snooze is available, choose Snooze or Do Mission instead of being dropped into a challenge.</span>
-            </div>
+            <svg class="icon" aria-hidden="true"><use href="#i-split"></use></svg>
+            <strong>Stop becomes a clear choice</strong>
+            <span>When snooze is available, choose Snooze or Do Mission instead of being dropped into a challenge.</span>
           </div>
           <div class="feature-line">
-            <span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-lock"></use></svg></span>
-            <div>
-              <strong>Snooze without the escape hatch</strong>
-              <span>A protected snoozed alarm stays on until its mission is complete—and the mission can be done early.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="feature-phone" role="img" aria-label="RiseKeeper alarm editor with the Snooze or Do Mission choice">
-        <div class="phone">
-          <img src="/RiseKeeper/assets/showcase/6.5/editor.jpg" width="642" height="1389" loading="lazy" alt="">
-        </div>
-        <div class="stop-choice" aria-hidden="true">
-          <small>Alarm stopped</small>
-          <div class="choice-buttons">
-            <span>Snooze</span>
-            <span>Do Mission</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>
+            <strong>Snooze without the escape hatch</strong>
+            <span>A protected snoozed alarm stays on until its mission is complete — and the mission can be done early.</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="missions" class="section shell" aria-labelledby="missions-title">
-    <div class="mission-layout">
-      <div class="mission-gallery" role="img" aria-label="RiseKeeper Math and Memory mission screens">
-        <div class="phone">
-          <img src="/RiseKeeper/assets/showcase/6.5/math.jpg" width="642" height="1389" loading="lazy" alt="">
-        </div>
-        <div class="phone">
-          <img src="/RiseKeeper/assets/showcase/6.5/memory.jpg" width="642" height="1389" loading="lazy" alt="">
-        </div>
-      </div>
-      <div class="feature-copy">
-        <p class="section-kicker">Wake-up missions</p>
-        <h2 id="missions-title">Sleepy-you has to participate.</h2>
-        <p>
-          Pick the kind of friction that works for your brain, tune the difficulty and repetitions,
-          or chain up to three different missions with Pro.
-        </p>
-        <ul class="mission-pills" aria-label="Available missions">
-          <li class="mission-pill">Math</li>
-          <li class="mission-pill">Number Order</li>
-          <li class="mission-pill pro">Typing <b>PRO</b></li>
-          <li class="mission-pill pro">Memory <b>PRO</b></li>
-          <li class="mission-pill pro">Odd One Out <b>PRO</b></li>
-        </ul>
-        <div class="preview-note">
-          <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
-          <span><strong>Try before you buy.</strong> Every premium mission can be played in preview mode before unlocking Pro.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section feature-band" aria-labelledby="protection-title">
+  <section id="missions" class="zone z-missions" aria-labelledby="missions-title" data-zone="4">
     <div class="shell">
-      <div class="section-header">
-        <p class="section-kicker">Layered protection</p>
-        <h2 id="protection-title">Built around how alarms get bypassed.</h2>
-        <p>iOS always provides its own Stop control. RiseKeeper is transparent about that—and adds multiple layers after the tap.</p>
+      <div class="split split-reverse">
+        <div class="split-copy" data-reveal>
+          <p class="stamp">Wake-up missions</p>
+          <h2 id="missions-title">Sleepy-you has to participate.</h2>
+          <p class="lede">
+            Pick the kind of friction that works for your brain, tune the difficulty and repetitions,
+            or chain up to three different missions with Pro.
+          </p>
+          <p class="plates-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
+            <span><strong>Try before you buy.</strong> Every premium mission can be played in preview mode before unlocking Pro.</span>
+          </p>
+        </div>
+        <div class="split-visual" data-reveal>
+          <figure class="device" style="--dw: clamp(190px, 16.5vw, 226px)">
+            <div class="device-frame">
+              <img src="/RiseKeeper/assets/showcase/6.5/math.jpg"
+                   srcset="/RiseKeeper/assets/showcase/6.5/math.jpg 642w, /RiseKeeper/assets/showcase/6.9/math.jpg 660w"
+                   sizes="(max-width: 760px) 62vw, 226px"
+                   width="642" height="1389" loading="lazy"
+                   alt="A RiseKeeper Math mission asking for an answer before the alarm stays quiet">
+              <span class="device-island" aria-hidden="true"></span>
+            </div>
+          </figure>
+        </div>
       </div>
-      <div class="feature-grid">
-        <article class="feature-card">
-          <span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-repeat"></use></svg></span>
-          <h3>Strict Mode</h3>
-          <p>Detects a bypass and can schedule a short re-alert while each mission input keeps the protection countdown fresh.</p>
+
+      <div class="plates" role="group" aria-label="The five wake-up missions">
+        <article class="plate" data-reveal>
+          <div class="plate-head">
+            <span class="plate-index">01</span>
+          </div>
+          <span class="plate-glyph" aria-hidden="true">ƒ(x)</span>
+          <div>
+            <h3>Math</h3>
+            <p>Arithmetic</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-clock"></use></svg></span>
+        <article class="plate" data-reveal>
+          <div class="plate-head">
+            <span class="plate-index">02</span>
+          </div>
+          <span class="plate-glyph" aria-hidden="true">1 2 3</span>
+          <div>
+            <h3>Number Order</h3>
+            <p>Sequencing</p>
+          </div>
+        </article>
+        <article class="plate" data-reveal>
+          <div class="plate-head">
+            <span class="plate-index">03</span>
+            <span class="badge">Pro</span>
+          </div>
+          <span class="plate-glyph" aria-hidden="true">Aa<i class="glyph-caret"></i></span>
+          <div>
+            <h3>Typing</h3>
+            <p>Transcription</p>
+          </div>
+        </article>
+        <article class="plate" data-reveal>
+          <div class="plate-head">
+            <span class="plate-index">04</span>
+            <span class="badge">Pro</span>
+          </div>
+          <span class="plate-glyph" aria-hidden="true"><span class="glyph-tiles"><i></i><i></i><i></i><i></i></span></span>
+          <div>
+            <h3>Memory</h3>
+            <p>Pattern recall</p>
+          </div>
+        </article>
+        <article class="plate" data-reveal>
+          <div class="plate-head">
+            <span class="plate-index">05</span>
+            <span class="badge">Pro</span>
+          </div>
+          <span class="plate-glyph" aria-hidden="true"><span class="glyph-odd"><i></i><i></i><i></i></span></span>
+          <div>
+            <h3>Odd One Out</h3>
+            <p>Discrimination</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="zone z-protect" aria-labelledby="protection-title" data-zone="5">
+    <div class="shell">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="stamp">Layered protection</p>
+          <h2 id="protection-title">Built around how alarms get bypassed.</h2>
+        </div>
+        <p class="lede">iOS always provides its own Stop control. RiseKeeper is transparent about that — and adds multiple layers after the tap.</p>
+      </div>
+
+      <div class="matrix">
+        <article class="matrix-cell" data-reveal>
+          <p class="matrix-index"><svg class="icon" aria-hidden="true"><use href="#i-repeat"></use></svg> Layer 01</p>
+          <h3>Strict Mode</h3>
+          <p>Detects a bypass and can schedule a short re-alert, while each mission input keeps the protection countdown fresh.</p>
+        </article>
+        <article class="matrix-cell" data-reveal>
+          <p class="matrix-index"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg> Layer 02</p>
           <h3>Wake-Up Check</h3>
           <p>Pro can check back a few minutes later and ask for another mission, helping prove you actually stayed up.</p>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-lock"></use></svg></span>
+        <article class="matrix-cell" data-reveal>
+          <p class="matrix-index"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg> Layer 03</p>
           <h3>Protected snooze</h3>
           <p>A snoozed mission alarm cannot be switched off inside RiseKeeper before the mission is completed.</p>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"></use></svg></span>
+        <article class="matrix-cell" data-reveal>
+          <p class="matrix-index"><svg class="icon" aria-hidden="true"><use href="#i-layers"></use></svg> Layer 04</p>
           <h3>One active wake session</h3>
           <p>Related recovery alarms pause while a mission is active, so the same wake session does not ring over itself.</p>
         </article>
@@ -208,181 +323,231 @@ page_class: marketing
     </div>
   </section>
 
-  <section id="preview" class="section shell" aria-labelledby="preview-title">
-    <div class="section-header">
-      <p class="section-kicker">See the whole flow</p>
-      <h2 id="preview-title">Free and Pro, in motion.</h2>
-      <p>Two 22-second captures of the current RiseKeeper build. Press play—nothing is mocked up.</p>
-    </div>
-    <div class="video-grid">
-      <figure class="video-card">
-        <div class="video-frame">
-          <video controls playsinline preload="none" poster="/RiseKeeper/assets/showcase/6.5/list.jpg" aria-label="RiseKeeper free experience video preview">
-            <source src="/RiseKeeper/assets/showcase/normal.mp4" type="video/mp4">
-            <a href="/RiseKeeper/assets/showcase/normal.mp4">Download the free experience preview</a>.
-          </video>
+  <section id="preview" class="zone z-preview" aria-labelledby="preview-title" data-zone="6">
+    <div class="shell">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="stamp">See the whole flow</p>
+          <h2 id="preview-title">Free and Pro, in motion.</h2>
         </div>
-        <figcaption>
-          <h3>RiseKeeper Free</h3>
-          <p>Alarm creation, included missions, wake history, and the core protection flow.</p>
-        </figcaption>
-      </figure>
-      <figure class="video-card">
-        <div class="video-frame pro-frame">
-          <video controls playsinline preload="none" poster="/RiseKeeper/assets/showcase/6.5/pro.jpg" aria-label="RiseKeeper Pro experience video preview">
-            <source src="/RiseKeeper/assets/showcase/pro.mp4" type="video/mp4">
-            <a href="/RiseKeeper/assets/showcase/pro.mp4">Download the RiseKeeper Pro preview</a>.
-          </video>
-        </div>
-        <figcaption>
-          <h3>RiseKeeper Pro</h3>
-          <p>Premium missions, mission chains, custom audio, Wake-Up Check, and more.</p>
-        </figcaption>
-      </figure>
+        <p class="lede">Two 22-second captures of the current RiseKeeper build. Press play — nothing is mocked up.</p>
+      </div>
+
+      <div class="reel">
+        <figure data-reveal>
+          <div class="device">
+            <div class="device-frame">
+              <video controls playsinline preload="none" poster="/RiseKeeper/assets/showcase/6.5/list.jpg" aria-label="RiseKeeper free experience video preview">
+                <source src="/RiseKeeper/assets/showcase/normal.mp4" type="video/mp4">
+                <a href="/RiseKeeper/assets/showcase/normal.mp4">Download the free experience preview</a>.
+              </video>
+            </div>
+          </div>
+          <figcaption>
+            <p class="reel-meta"><span>Free</span> <span>0:22</span></p>
+            <h3>RiseKeeper Free</h3>
+            <p>Alarm creation, included missions, wake history, and the core protection flow.</p>
+          </figcaption>
+        </figure>
+        <figure data-reveal>
+          <div class="device">
+            <div class="device-frame">
+              <video controls playsinline preload="none" poster="/RiseKeeper/assets/showcase/6.5/pro.jpg" aria-label="RiseKeeper Pro experience video preview">
+                <source src="/RiseKeeper/assets/showcase/pro.mp4" type="video/mp4">
+                <a href="/RiseKeeper/assets/showcase/pro.mp4">Download the RiseKeeper Pro preview</a>.
+              </video>
+            </div>
+          </div>
+          <figcaption>
+            <p class="reel-meta"><span>Pro</span> <span>0:22</span></p>
+            <h3>RiseKeeper Pro</h3>
+            <p>Premium missions, mission chains, custom audio, Wake-Up Check, and more.</p>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <section id="pro" class="section pro-section shell" aria-labelledby="pro-title">
-    <div class="pro-panel">
-      <div class="pro-top">
-        <div class="pro-copy">
-          <span class="pro-mark">RiseKeeper Pro</span>
-          <h2 id="pro-title">More ways to make awake undeniable.</h2>
-          <p>Unlock the complete wake-up system in one purchase, with no recurring subscription.</p>
-        </div>
-        <div class="one-time">
+  <section id="pro" class="zone z-pro" aria-labelledby="pro-title" data-zone="7">
+    <div class="shell pro-layout">
+      <div data-reveal>
+        <p class="pro-mark">RiseKeeper Pro</p>
+        <h2 id="pro-title">More ways to make awake undeniable.</h2>
+        <p class="lede">Unlock the complete wake-up system in one purchase, with no recurring subscription.</p>
+        <p class="one-time">
           <strong>Lifetime access</strong>
           <span>One purchase · No subscription · Apple shows your local price</span>
+        </p>
+
+        <div class="tiers">
+          <article class="tier">
+            <p class="tier-label"><span>Free</span> <span>Included</span></p>
+            <ul class="check-list">
+              <li>Real one-time and weekly iOS alarms</li>
+              <li>Math and Number Order missions</li>
+              <li>One mission per alarm</li>
+              <li>Three built-in alarm sounds</li>
+              <li>Files and Voice Memos audio import</li>
+              <li>Strict Mode, history, and streaks</li>
+            </ul>
+          </article>
+          <article class="tier tier-pro">
+            <p class="tier-label"><span>Pro</span> <span>Everything above, plus</span></p>
+            <ul class="check-list">
+              <li>Typing, Memory, and Odd One Out</li>
+              <li>Chains of up to three missions</li>
+              <li>All six built-in alarm sounds</li>
+              <li>In-app recording and Music Library audio</li>
+              <li>Wake-Up Check after dismissal</li>
+              <li>Three exclusive alternate app icons</li>
+            </ul>
+          </article>
         </div>
       </div>
-      <div class="price-grid">
-        <article class="price-card">
-          <h3>Free</h3>
-          <ul class="check-list">
-            <li>Real one-time and weekly iOS alarms</li>
-            <li>Math and Number Order missions</li>
-            <li>One mission per alarm</li>
-            <li>Three built-in alarm sounds</li>
-            <li>Files and Voice Memos audio import</li>
-            <li>Strict Mode, history, and streaks</li>
-          </ul>
-        </article>
-        <article class="price-card pro-card">
-          <h3>Pro</h3>
-          <ul class="check-list">
-            <li>Typing, Memory, and Odd One Out</li>
-            <li>Chains of up to three missions</li>
-            <li>All six built-in alarm sounds</li>
-            <li>In-app recording and Music Library audio</li>
-            <li>Wake-Up Check after dismissal</li>
-            <li>Three exclusive alternate app icons</li>
-          </ul>
-        </article>
+
+      <div class="split-visual pro-visual" data-reveal>
+        <figure class="device" style="--dw: clamp(220px, 22vw, 288px)">
+          <div class="device-frame">
+            <img src="/RiseKeeper/assets/showcase/6.5/pro.jpg"
+                 srcset="/RiseKeeper/assets/showcase/6.5/pro.jpg 642w, /RiseKeeper/assets/showcase/6.9/pro.jpg 660w"
+                 sizes="(max-width: 760px) 62vw, 288px"
+                 width="642" height="1389" loading="lazy"
+                 alt="The RiseKeeper Pro screen showing mission chains and lifetime access">
+            <span class="device-island" aria-hidden="true"></span>
+          </div>
+          <figcaption class="device-caption">RiseKeeper Pro · in-app</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section class="section shell" aria-labelledby="privacy-title">
-    <div class="privacy-layout">
-      <div class="privacy-copy">
-        <p class="section-kicker">Private by default</p>
+  <section class="zone z-privacy" aria-labelledby="privacy-title" data-zone="8">
+    <div class="shell split split-reverse">
+      <div class="split-copy" data-reveal>
+        <p class="stamp">Private by default</p>
         <h2 id="privacy-title">Your morning is not a data product.</h2>
-        <p>
+        <p class="lede">
           Alarm settings, wake history, streaks, and custom audio stay on your iPhone.
           RiseKeeper works without an account or backend.
         </p>
-        <p><a class="button button-secondary" href="/RiseKeeper/privacy/">Read the privacy policy</a></p>
-      </div>
-      <div class="privacy-card" role="group" aria-label="RiseKeeper privacy summary">
-        <div class="privacy-row">
-          <span class="privacy-icon" aria-hidden="true"><svg class="icon"><use href="#i-no"></use></svg></span>
-          <div><strong>No account</strong><small>Nothing to create or sign into</small></div>
-          <span class="privacy-status">NONE</span>
+        <div class="ledger" role="group" aria-label="RiseKeeper privacy summary">
+          <div class="ledger-row">
+            <svg class="icon" aria-hidden="true"><use href="#i-no"></use></svg>
+            <div><strong>No account</strong><small>Nothing to create or sign into</small></div>
+            <span class="ledger-status">None</span>
+          </div>
+          <div class="ledger-row">
+            <svg class="icon" aria-hidden="true"><use href="#i-no"></use></svg>
+            <div><strong>No ads or analytics</strong><small>No tracking SDKs in the app</small></div>
+            <span class="ledger-status">None</span>
+          </div>
+          <div class="ledger-row">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+            <div><strong>On-device storage</strong><small>Alarm and wake data stay local</small></div>
+            <span class="ledger-status">Local</span>
+          </div>
+          <div class="ledger-row">
+            <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+            <div><strong>Apple-processed purchases</strong><small>RiseKeeper never receives payment details</small></div>
+            <span class="ledger-status">Apple</span>
+          </div>
         </div>
-        <div class="privacy-row">
-          <span class="privacy-icon" aria-hidden="true"><svg class="icon"><use href="#i-no"></use></svg></span>
-          <div><strong>No ads or analytics</strong><small>No tracking SDKs in the app</small></div>
-          <span class="privacy-status">NONE</span>
-        </div>
-        <div class="privacy-row">
-          <span class="privacy-icon" aria-hidden="true"><svg class="icon"><use href="#i-phone"></use></svg></span>
-          <div><strong>On-device storage</strong><small>Alarm and wake data stay local</small></div>
-          <span class="privacy-status">LOCAL</span>
-        </div>
-        <div class="privacy-row">
-          <span class="privacy-icon" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
-          <div><strong>Apple-processed purchases</strong><small>RiseKeeper never receives payment details</small></div>
-          <span class="privacy-status">APPLE</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="support" class="section feature-band" aria-labelledby="support-title">
-    <div class="faq shell">
-      <div class="section-header">
-        <p class="section-kicker">Support</p>
-        <h2 id="support-title">The important questions, answered.</h2>
+        <p class="privacy-actions">
+          <a class="button button-secondary" href="/RiseKeeper/privacy/">Read the privacy policy</a>
+        </p>
       </div>
 
-      <details>
-        <summary>Does RiseKeeper need to stay open for an alarm to ring?</summary>
-        <p>
-          No. RiseKeeper schedules through Apple AlarmKit, so the app does not need to remain open.
-          Your iPhone still needs power, alarm permission, and compatible iOS settings.
-        </p>
-      </details>
-      <details>
-        <summary>Will my custom sound still ring after I close the app?</summary>
-        <p>
-          Yes. Compatible custom audio is converted and stored locally where the scheduled system alarm can use it.
-          Recording inside RiseKeeper and Music Library selection require Pro; importing compatible Files or Voice Memos audio is free.
-        </p>
-      </details>
-      <details>
-        <summary>Can the iOS Stop button bypass a mission?</summary>
-        <p>
-          iOS always provides a system-controlled Stop affordance. RiseKeeper does not claim otherwise.
-          Strict Mode can detect a bypass and re-alert, while protected snooze and Wake-Up Check add more follow-through.
-        </p>
-      </details>
-      <details>
-        <summary>Can I try premium missions before purchasing?</summary>
-        <p>Yes. Typing, Memory, and Odd One Out can all be played in preview mode before you unlock Pro.</p>
-      </details>
-      <details>
-        <summary>Is RiseKeeper Pro a subscription?</summary>
-        <p>
-          No. RiseKeeper Pro is a one-time, non-consumable purchase for lifetime access. Restore Purchases is available
-          in <strong>Settings → RiseKeeper Pro</strong>.
-        </p>
-      </details>
-      <details>
-        <summary>My alarms do not appear. What should I check?</summary>
-        <p>
-          Open iOS Settings and make sure alarm access is enabled for RiseKeeper. Then open RiseKeeper once so it can
-          reconcile saved alarms with AlarmKit. If the issue continues, <a href="mailto:risekeeper.help@outlook.com">contact support</a>.
-        </p>
-      </details>
-
-      <div class="support-card">
-        <div>
-          <h3>Need a human?</h3>
-          <p>Include your iPhone model, iOS version, and a short description. Never send passwords or verification codes.</p>
-        </div>
-        <a class="button button-primary" href="mailto:risekeeper.help@outlook.com">Email support</a>
+      <div class="split-visual" data-reveal>
+        <figure class="device" style="--dw: clamp(220px, 23vw, 292px)">
+          <div class="device-frame">
+            <img src="/RiseKeeper/assets/showcase/6.5/history.jpg"
+                 srcset="/RiseKeeper/assets/showcase/6.5/history.jpg 642w, /RiseKeeper/assets/showcase/6.9/history.jpg 660w"
+                 sizes="(max-width: 760px) 62vw, 292px"
+                 width="642" height="1389" loading="lazy"
+                 alt="RiseKeeper wake history showing streaks and completed missions, stored on the device">
+            <span class="device-island" aria-hidden="true"></span>
+          </div>
+          <figcaption class="device-caption">Wake history · stored on device</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section class="closing">
-    <div class="closing-cta shell">
-      <p class="section-kicker">Rise. Prove it. Keep going.</p>
-      <h2>Build a morning sleepy-you can’t negotiate away.</h2>
-      <p>RiseKeeper is launching on the App Store for iPhone with free core alarms and an optional lifetime Pro unlock. Leave your email and you’ll hear the moment it’s live.</p>
-      <div class="closing-actions">
-        <a class="button button-primary" href="mailto:risekeeper.help@outlook.com?subject=Tell%20me%20when%20RiseKeeper%20launches&amp;body=Send%20me%20a%20note%20when%20RiseKeeper%20is%20on%20the%20App%20Store.">Notify me at launch</a>
-        <a class="button button-secondary" href="#how-it-works">Back to the top</a>
+  <section id="support" class="zone z-support" aria-labelledby="support-title" data-zone="9">
+    <div class="shell support-grid">
+      <div class="support-aside">
+        <div class="support-aside-inner" data-reveal>
+          <p class="stamp">Support</p>
+          <h2 id="support-title">The important questions, answered.</h2>
+          <div class="support-card">
+            <h3>Need a human?</h3>
+            <p>Include your iPhone model, iOS version, and a short description. Never send passwords or verification codes.</p>
+            <a class="button button-primary" href="mailto:risekeeper.help@outlook.com">Email support</a>
+            <p class="support-address">risekeeper.help@outlook.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary><span class="faq-index" aria-hidden="true">Q01</span><span>Does RiseKeeper need to stay open for an alarm to ring?</span><span class="faq-tag" aria-hidden="true">AlarmKit</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+          <p>
+            No. RiseKeeper schedules through Apple AlarmKit, so the app does not need to remain open.
+            Your iPhone still needs power, alarm permission, and compatible iOS settings.
+          </p>
+        </details>
+        <details>
+          <summary><span class="faq-index" aria-hidden="true">Q02</span><span>Will my custom sound still ring after I close the app?</span><span class="faq-tag" aria-hidden="true">Custom audio</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+          <p>
+            Yes. Compatible custom audio is converted and stored locally where the scheduled system alarm can use it.
+            Recording inside RiseKeeper and Music Library selection require Pro; importing compatible Files or Voice Memos audio is free.
+          </p>
+        </details>
+        <details>
+          <summary><span class="faq-index" aria-hidden="true">Q03</span><span>Can the iOS Stop button bypass a mission?</span><span class="faq-tag" aria-hidden="true">iOS Stop</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+          <p>
+            iOS always provides a system-controlled Stop affordance. RiseKeeper does not claim otherwise.
+            Strict Mode can detect a bypass and re-alert, while protected snooze and Wake-Up Check add more follow-through.
+          </p>
+        </details>
+        <details>
+          <summary><span class="faq-index" aria-hidden="true">Q04</span><span>Can I try premium missions before purchasing?</span><span class="faq-tag" aria-hidden="true">Preview mode</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+          <p>Yes. Typing, Memory, and Odd One Out can all be played in preview mode before you unlock Pro.</p>
+        </details>
+        <details>
+          <summary><span class="faq-index" aria-hidden="true">Q05</span><span>Is RiseKeeper Pro a subscription?</span><span class="faq-tag" aria-hidden="true">Purchase</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+          <p>
+            No. RiseKeeper Pro is a one-time, non-consumable purchase for lifetime access. Restore Purchases is available
+            in <strong>Settings → RiseKeeper Pro</strong>.
+          </p>
+        </details>
+        <details>
+          <summary><span class="faq-index" aria-hidden="true">Q06</span><span>My alarms do not appear. What should I check?</span><span class="faq-tag" aria-hidden="true">Troubleshooting</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+          <p>
+            Open iOS Settings and make sure alarm access is enabled for RiseKeeper. Then open RiseKeeper once so it can
+            reconcile saved alarms with AlarmKit. If the issue continues, <a href="mailto:risekeeper.help@outlook.com">contact support</a>.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="zone z-closing" aria-labelledby="closing-title" data-zone="10">
+    <div class="shell closing-grid">
+      <div>
+        <p class="stamp">Rise. Prove it. Keep going.</p>
+        <h2 id="closing-title">Build a morning sleepy-you can’t negotiate away.</h2>
+        <p class="lede">RiseKeeper is launching on the App Store for iPhone with free core alarms and an optional lifetime Pro unlock. Leave your email and you’ll hear the moment it’s live.</p>
+        <div class="closing-actions">
+          <a class="button button-primary" href="mailto:risekeeper.help@outlook.com?subject=Tell%20me%20when%20RiseKeeper%20launches&amp;body=Send%20me%20a%20note%20when%20RiseKeeper%20is%20on%20the%20App%20Store.">Notify me at launch</a>
+          <a class="button button-secondary" href="#main-content">Back to the top</a>
+        </div>
+      </div>
+      <div class="closing-side">
+        <p class="closing-meta"><span>Platform</span> <b>iPhone · iOS 26+</b></p>
+        <p class="closing-meta"><span>Account</span> <b>Not required</b></p>
+        <p class="closing-meta"><span>Missions</span> <b>5</b></p>
+        <p class="closing-meta"><span>Pro</span> <b>One-time unlock</b></p>
       </div>
     </div>
   </section>

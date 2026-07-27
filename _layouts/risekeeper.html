@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0b0e14">
+    <meta name="theme-color" content="#05070d">
     <meta name="color-scheme" content="dark">
     <script>document.documentElement.classList.add('js');</script>
 
@@ -141,10 +141,26 @@
       {{ content }}
     {% else %}
       <main id="main-content" class="legal-main shell">
-        <a class="back-link" href="/RiseKeeper/">← Back to RiseKeeper</a>
-        <article class="prose">
-          {{ content }}
-        </article>
+        <div class="legal-body">
+          <a class="back-link" href="/RiseKeeper/">← Back to RiseKeeper</a>
+          <article class="prose">
+            {{ content }}
+          </article>
+        </div>
+
+        <aside class="legal-aside" aria-label="Document index">
+          <div class="legal-aside-inner">
+            <p class="legal-aside-label">Documents</p>
+            <nav class="legal-docs" aria-label="Legal documents">
+              <a href="/RiseKeeper/privacy/">Privacy policy</a>
+              <a href="/RiseKeeper/terms/">Terms of use</a>
+              <a href="/RiseKeeper/sound-licenses/">Sound licenses</a>
+            </nav>
+            <nav class="legal-toc" data-legal-toc aria-label="Sections on this page" hidden></nav>
+            <p class="legal-aside-label">Questions</p>
+            <a class="legal-aside-mail" href="mailto:risekeeper.help@outlook.com">risekeeper.help@outlook.com</a>
+          </div>
+        </aside>
       </main>
     {% endif %}
 
@@ -220,6 +236,152 @@
         window.matchMedia('(min-width: 981px)').addEventListener('change', function (event) {
           if (event.matches) setOpen(false);
         });
+      })();
+    </script>
+
+    <script>
+      /* Legal pages: mark the open document and build the running section
+         index in the right column. Without JS the rail still carries the
+         document list and the support address. */
+      (function () {
+        var here = location.pathname.replace(/index\.html$/, '');
+        var docs = document.querySelectorAll('.legal-docs a');
+        for (var i = 0; i < docs.length; i++) {
+          var href = docs[i].getAttribute('href').replace(/index\.html$/, '');
+          if (href === here) docs[i].setAttribute('aria-current', 'page');
+        }
+
+        var toc = document.querySelector('[data-legal-toc]');
+        var heads = document.querySelectorAll('.prose h2');
+        if (!toc || heads.length < 2) return;
+        var label = document.createElement('p');
+        label.className = 'legal-aside-label';
+        label.textContent = 'On this page';
+        toc.appendChild(label);
+        for (var j = 0; j < heads.length; j++) {
+          if (!heads[j].id) {
+            heads[j].id = 'sec-' + (heads[j].textContent || '')
+              .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+          }
+          var a = document.createElement('a');
+          a.href = '#' + heads[j].id;
+          a.textContent = heads[j].textContent;
+          toc.appendChild(a);
+        }
+        toc.hidden = false;
+      })();
+    </script>
+
+    <script>
+      /* Daybreak: scroll-reveal, the time rail, and the dawn colour switch.
+         Everything here is progressive enhancement — without JS the page is
+         fully visible and the rail simply never appears. */
+      (function () {
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        /* --- Scroll reveal: opacity + a small lift, once only. ------------- */
+        var revealables = document.querySelectorAll('[data-reveal]');
+        function revealAll() {
+          for (var i = 0; i < revealables.length; i++) revealables[i].classList.add('is-in');
+        }
+        if (!revealables.length) {
+          /* nothing to do */
+        } else if (reduced.matches || !('IntersectionObserver' in window)) {
+          revealAll();
+        } else {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-in');
+              io.unobserve(entry.target);
+            });
+          }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+          revealables.forEach(function (el) { io.observe(el); });
+          /* Safety net: never leave content stranded at opacity 0. */
+          window.setTimeout(revealAll, 2500);
+        }
+
+        /* --- Time rail: 04:47 at the top of the page, 07:20 at the bottom. - */
+        var rail = document.querySelector('[data-time-rail]');
+        var closing = document.querySelector('.z-closing');
+        var nowMark = rail && rail.querySelector('.rail-now');
+        var nowTime = rail && rail.querySelector('.rail-now-time');
+        var marks = rail ? rail.querySelectorAll('.rail-marks li') : [];
+        var zones = document.querySelectorAll('[data-zone]');
+        /* Minutes past midnight for each zone, matching the printed stamps. */
+        var CLOCK = [287, 302, 330, 352, 370, 382, 390, 404, 425, 432, 440];
+        var anchors = [];
+
+        function pad(n) { return (n < 10 ? '0' : '') + n; }
+        function fmt(mins) {
+          var m = Math.round(mins);
+          return pad(Math.floor(m / 60)) + ':' + pad(m % 60);
+        }
+
+        function measure() {
+          anchors = [];
+          var span = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+          for (var i = 0; i < zones.length; i++) {
+            var box = zones[i].getBoundingClientRect();
+            var top = box.top + window.scrollY - window.innerHeight * 0.45;
+            anchors.push({ p: Math.min(1, Math.max(0, top / span)), t: CLOCK[i] || CLOCK[CLOCK.length - 1] });
+          }
+          if (anchors.length) {
+            anchors[0].p = 0;
+            anchors[anchors.length - 1].p = 1;
+          }
+          for (var j = 0; j < marks.length; j++) {
+            var target = [287, 330, 370, 390, 425, 440][j];
+            marks[j].style.setProperty('--p', progressForTime(target).toFixed(4));
+          }
+        }
+
+        function progressForTime(t) {
+          for (var i = 1; i < anchors.length; i++) {
+            if (t <= anchors[i].t) {
+              var a = anchors[i - 1], b = anchors[i];
+              if (b.t === a.t) return b.p;
+              return a.p + (b.p - a.p) * ((t - a.t) / (b.t - a.t));
+            }
+          }
+          return 1;
+        }
+
+        function timeForProgress(p) {
+          for (var i = 1; i < anchors.length; i++) {
+            if (p <= anchors[i].p) {
+              var a = anchors[i - 1], b = anchors[i];
+              if (b.p === a.p) return b.t;
+              return a.t + (b.t - a.t) * ((p - a.p) / (b.p - a.p));
+            }
+          }
+          return CLOCK[CLOCK.length - 1];
+        }
+
+        var ticking = false;
+        function frame() {
+          ticking = false;
+          var span = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+          var p = Math.min(1, Math.max(0, window.scrollY / span));
+          if (nowMark && anchors.length) {
+            nowMark.style.setProperty('--now', p.toFixed(4));
+            nowTime.textContent = fmt(timeForProgress(p));
+          }
+          if (closing) {
+            document.body.classList.toggle('dawn', closing.getBoundingClientRect().top <= 74);
+          }
+        }
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(frame);
+        }
+
+        measure();
+        frame();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', function () { measure(); frame(); }, { passive: true });
+        window.addEventListener('load', function () { measure(); frame(); });
       })();
     </script>
   </body>

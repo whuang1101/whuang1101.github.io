@@ -1,5 +1,7 @@
 ---
+layout: risekeeper
 title: RiseKeeper Privacy Policy
+description: How RiseKeeper keeps alarm, wake-history, and custom-audio data private and on your device.
 permalink: /RiseKeeper/privacy/
 ---
 

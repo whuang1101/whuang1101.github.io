@@ -1,5 +1,7 @@
 ---
+layout: risekeeper
 title: RiseKeeper Terms of Use
+description: Terms for using the RiseKeeper iOS alarm app and its lifetime Pro purchase.
 permalink: /RiseKeeper/terms/
 ---
 

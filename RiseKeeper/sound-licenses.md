@@ -1,5 +1,7 @@
 ---
+layout: risekeeper
 title: RiseKeeper Sound Licenses
+description: Source and licensing details for the original alarm sounds included with RiseKeeper.
 permalink: /RiseKeeper/sound-licenses/
 ---
 

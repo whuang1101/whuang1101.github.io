@@ -59,7 +59,7 @@
 html {
   overflow-x: clip;
   scroll-behavior: smooth;
-  scroll-padding-top: 104px;
+  scroll-padding-top: 72px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -3067,7 +3067,382 @@ html:not(.js) .legal-main {
 }
 
 /* --------------------------------------------------------------------------
-   23. Reduced motion — nothing animates, and nothing is left invisible
+   23. Navigation-sized views
+
+   A menu jump should resolve as a complete composition, not strand the
+   visitor halfway through a tall product specimen. On larger screens the
+   anchored sections scale their media and spacing against viewport height.
+   On phones, decorative devices give way to compact, content-complete views.
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 981px) and (min-height: 700px) {
+  .anchor-screen {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 72px);
+    min-height: calc(100svh - 72px);
+    padding-block: clamp(28px, 4.5vh, 52px);
+  }
+
+  .anchor-screen > .shell {
+    width: min(calc(100% - (var(--gutter) * 2)), var(--shell));
+  }
+
+  .anchor-screen .section-head {
+    margin-bottom: clamp(22px, 3vh, 38px);
+  }
+
+  .anchor-screen .stamp {
+    margin-bottom: clamp(12px, 1.8vh, 18px);
+  }
+
+  .z-missions .split {
+    row-gap: clamp(20px, 3vh, 36px);
+  }
+
+  .z-missions .split-copy > .lede {
+    margin-top: clamp(14px, 2vh, 22px);
+  }
+
+  .z-missions .plates-note {
+    margin-top: clamp(16px, 2.4vh, 24px);
+  }
+
+  .z-missions .device {
+    --dw: clamp(158px, 22vh, 196px) !important;
+  }
+
+  .z-missions .plates {
+    margin-top: clamp(20px, 3vh, 34px);
+  }
+
+  .z-missions .plate {
+    min-height: clamp(126px, 17vh, 158px);
+    padding: clamp(14px, 2vh, 20px) 16px;
+    gap: clamp(8px, 1.5vh, 14px);
+  }
+
+  .z-preview .reel {
+    gap: clamp(28px, 4vw, 52px);
+  }
+
+  .z-preview .reel .device {
+    --dw: clamp(158px, 22vh, 220px);
+  }
+
+  .z-preview .reel figcaption {
+    margin-top: clamp(14px, 2vh, 22px);
+    padding-top: clamp(12px, 1.8vh, 18px);
+  }
+
+  .z-preview .reel-meta {
+    margin-bottom: 8px;
+  }
+
+  .z-pro .one-time {
+    margin-top: clamp(18px, 2.6vh, 28px);
+    padding-block: clamp(12px, 1.8vh, 18px);
+  }
+
+  .z-pro .tiers {
+    margin-top: clamp(18px, 2.4vh, 28px);
+  }
+
+  .z-pro .tier {
+    padding-top: clamp(16px, 2.2vh, 24px);
+    padding-bottom: clamp(18px, 2.5vh, 28px);
+  }
+
+  .z-pro .tier-label {
+    margin-bottom: clamp(12px, 1.8vh, 20px);
+  }
+
+  .z-pro .check-list li {
+    padding-block: clamp(7px, 1.2vh, 10px);
+  }
+
+  .z-pro .pro-visual .device {
+    --dw: clamp(184px, 27vh, 256px) !important;
+  }
+
+  .z-support .faq summary {
+    padding-block: clamp(14px, 2.2vh, 20px);
+  }
+}
+
+@media (min-width: 761px) and (max-width: 980px) {
+  .anchor-screen {
+    padding-block: 48px;
+  }
+
+  .z-alarm .split-visual,
+  .z-missions .split-visual,
+  .z-pro .pro-visual {
+    display: none;
+  }
+
+  .z-alarm .split,
+  .z-missions .split {
+    display: block;
+  }
+
+  .z-missions .plates {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: 30px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .z-missions .plate,
+  .z-missions .plate:nth-child(3n + 1) {
+    min-height: 150px;
+    padding: 16px 14px;
+    gap: 10px;
+    border-bottom: 0;
+    border-left: 1px solid var(--rule);
+  }
+
+  .z-missions .plate:first-child {
+    border-left: 0;
+  }
+
+  .z-preview .reel .device {
+    --dw: min(24vw, 190px);
+  }
+
+  .z-preview .reel figcaption {
+    margin-top: 20px;
+    padding-top: 14px;
+  }
+
+  .z-pro .one-time,
+  .z-pro .tiers {
+    margin-top: 22px;
+  }
+
+  .z-pro .check-list li {
+    padding-block: 8px;
+  }
+}
+
+@media (max-width: 760px) {
+  .anchor-screen {
+    padding-block: 44px;
+  }
+
+  /* Features and missions communicate more clearly as complete summaries on
+     a phone; the large devices are supporting imagery, not required content. */
+  .z-alarm .split-visual,
+  .z-missions .split-visual,
+  .z-pro .pro-visual {
+    display: none;
+  }
+
+  .z-alarm .split,
+  .z-missions .split {
+    display: block;
+  }
+
+  .z-alarm .split-copy > .lede,
+  .z-missions .split-copy > .lede {
+    margin-top: 14px;
+  }
+
+  .z-missions .plates-note {
+    margin-top: 16px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  /* All five missions now fit as a single compact instrument list rather than
+     five poster-sized cards. */
+  .z-missions .plates {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .z-missions .plate,
+  .z-missions .plate:nth-child(3n + 1),
+  .z-missions .plate:nth-child(odd) {
+    display: grid;
+    grid-template-columns: 34px 54px minmax(0, 1fr) auto;
+    align-items: center;
+    min-height: 0;
+    padding: 11px 0;
+    gap: 10px;
+    border-bottom: 1px solid var(--rule);
+    border-left: 0;
+  }
+
+  .z-missions .plate:last-child {
+    border-bottom: 0;
+  }
+
+  .z-missions .plate-head {
+    display: contents;
+  }
+
+  .z-missions .plate-index {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .z-missions .plate .badge {
+    grid-row: 1;
+    grid-column: 4;
+  }
+
+  .z-missions .plate-glyph {
+    grid-row: 1;
+    grid-column: 2;
+    min-height: 32px;
+    font-size: 1rem;
+  }
+
+  .z-missions .plate > div:last-child {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .z-missions .plate h3 {
+    font-size: 0.96rem;
+  }
+
+  .z-missions .plate p {
+    margin-top: 2px;
+    font-size: 0.52rem;
+  }
+
+  .z-missions .glyph-tiles {
+    grid-template-columns: repeat(2, 11px);
+    gap: 3px;
+  }
+
+  .z-missions .glyph-tiles i,
+  .z-missions .glyph-odd i {
+    width: 11px;
+    height: 11px;
+  }
+
+  /* Preview cards swipe horizontally, keeping a complete phone and caption in
+     one viewport while leaving the second experience visibly within reach. */
+  .z-preview .section-head {
+    margin-bottom: 24px;
+  }
+
+  .z-preview .reel {
+    display: flex;
+    overflow-x: auto;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) 14px;
+    gap: 18px;
+    scroll-padding-inline: var(--gutter);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .z-preview .reel figure {
+    width: calc(100vw - 56px);
+    flex: 0 0 calc(100vw - 56px);
+    scroll-snap-align: start;
+  }
+
+  .z-preview .reel .device {
+    --dw: min(48vw, 178px);
+  }
+
+  .z-preview .reel figcaption {
+    margin-top: 18px;
+    padding-top: 12px;
+  }
+
+  .z-preview .reel-meta {
+    margin-bottom: 8px;
+  }
+
+  /* The comparison remains complete but uses two compact columns, avoiding a
+     second full screen of list items. */
+  .z-pro .one-time {
+    margin-top: 20px;
+    padding-block: 12px;
+  }
+
+  .z-pro .tiers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 20px;
+  }
+
+  .z-pro .tier {
+    padding: 16px 10px 12px 0;
+  }
+
+  .z-pro .tier + .tier {
+    padding: 16px 0 12px 10px;
+  }
+
+  .z-pro .tier-label {
+    display: grid;
+    margin-bottom: 10px;
+    gap: 3px;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  .z-pro .check-list li {
+    padding: 7px 0 7px 16px;
+    font-size: 0.69rem;
+    line-height: 1.25;
+  }
+
+  .z-pro .check-list li::before {
+    top: 7px;
+    font-size: 0.7rem;
+  }
+
+  .z-support .support-grid {
+    row-gap: 24px;
+  }
+
+  .z-support .support-card {
+    margin-top: 24px;
+    padding-top: 18px;
+  }
+
+  .z-support .faq summary {
+    grid-template-columns: 40px minmax(0, 1fr) 20px;
+    padding: 14px 0;
+    gap: 10px;
+    font-size: 0.92rem;
+  }
+
+  .z-support .faq-tag {
+    display: none;
+  }
+
+  .z-support .faq-sign {
+    grid-column: 3;
+  }
+
+  .z-how .section-head {
+    margin-bottom: 22px;
+  }
+
+  .z-how .ladder-row {
+    padding-block: 18px 20px;
+  }
+
+  .z-how .ladder-time {
+    margin-bottom: 7px;
+  }
+
+  .z-how .ladder-row p {
+    font-size: 0.88rem;
+    line-height: 1.48;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   24. Reduced motion — nothing animates, and nothing is left invisible
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {

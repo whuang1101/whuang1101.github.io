@@ -1068,9 +1068,22 @@ body.dawn .rail-now-time {
 
 .hero-actions {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 34px;
   gap: 12px;
+}
+
+.app-store-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+}
+
+.app-store-badge img {
+  display: block;
+  width: auto;
+  height: 52px;
 }
 
 .launch-note {
@@ -1114,8 +1127,8 @@ body.dawn .rail-now-time {
 
 .device {
   --dw: 260px;
-  --dr: calc(var(--dw) * 0.121);
-  --db: calc(var(--dw) * 0.022);
+  --dr: clamp(18px, calc(var(--dw) * 0.08), 24px);
+  --db: 3px;
   position: relative;
   width: var(--dw);
   margin: 0;
@@ -1125,16 +1138,10 @@ body.dawn .rail-now-time {
 .device-frame {
   position: relative;
   padding: var(--db);
-  background: linear-gradient(
-    152deg,
-    rgba(255, 255, 255, 0.34),
-    rgba(255, 255, 255, 0.06) 26%,
-    rgba(0, 0, 0, 0.5) 62%,
-    rgba(255, 255, 255, 0.14)
-  );
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: calc(var(--dr) + var(--db));
   box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.6),
     0 0 34px -6px var(--rim),
     0 42px 70px -28px rgba(0, 0, 0, 0.9);
 }
@@ -1145,19 +1152,6 @@ body.dawn .rail-now-time {
   height: auto;
   background: #000;
   border-radius: var(--dr);
-}
-
-/* Dynamic Island — the captures are drawn around one. */
-.device-island {
-  position: absolute;
-  z-index: 2;
-  top: 1.35%;
-  left: 50%;
-  width: 19.2%;
-  height: 2.55%;
-  background: #000;
-  border-radius: 999px;
-  transform: translateX(-50%);
 }
 
 /* Grounded contact shadow. */
@@ -2225,6 +2219,7 @@ body.dawn .rail-now-time {
 .footer-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   margin-top: 34px;
   padding-top: 22px;
   gap: 12px;
@@ -2234,6 +2229,15 @@ body.dawn .rail-now-time {
   font-size: 0.65rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.apple-credit {
+  max-width: 62ch;
+  font-family: var(--font-sans);
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-align: right;
+  text-transform: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -2842,6 +2846,14 @@ html:not(.js) .legal-main {
     width: 100%;
   }
 
+  .hero-actions .app-store-badge {
+    min-height: 48px;
+  }
+
+  .hero-actions .app-store-badge img {
+    height: 48px;
+  }
+
   /* One whole device plus the mission float — a second phone at this width
      could only ever be a sliver falling off the left edge. */
   .hero-stack .device-main {
@@ -3010,6 +3022,10 @@ html:not(.js) .legal-main {
   .footer-bottom {
     flex-direction: column;
     gap: 6px;
+  }
+
+  .apple-credit {
+    text-align: left;
   }
 
   .legal-main {

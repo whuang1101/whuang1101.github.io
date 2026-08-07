@@ -59,7 +59,7 @@
   .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
   #trace{position:absolute; inset:0; width:100%; height:100%; display:block; opacity:.55}
   :root[data-theme="dark"] #trace, :root[data-theme="auto"] #trace{opacity:.5}
-  .hero-in{position:relative; z-index:1; padding:104px 0 76px}
+  .hero-in{position:relative; z-index:1; padding:104px 24px 76px}
   .eyebrow{
     font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
     color:var(--accent); margin:0 0 20px; display:inline-flex; align-items:center; gap:9px;
@@ -212,7 +212,7 @@
   @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
   @media (max-width:640px){
-    .hero-in{padding:80px 0 56px}
+    .hero-in{padding:80px 24px 56px}
     section{padding:56px 0}
     .toggle{top:12px; right:12px; width:38px; height:38px}
   }
